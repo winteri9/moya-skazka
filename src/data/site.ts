@@ -4,7 +4,7 @@
  * ⚠️ TELEGRAM_URL — ЗАМЕНИТЕ на ссылку своего бота (формат: https://t.me/username).
  *    Обе CTA-кнопки на странице берут адрес отсюда, больше нигде ссылка не дублируется.
  */
-export const TELEGRAM_URL = "https://t.me/moya_skazka_bot";
+export const TELEGRAM_URL = "https://t.me/skazochnik_test_ai";
 
 /** Домен сайта. Должен совпадать с `site` в astro.config.mjs. */
 export const SITE_URL = "https://moya-skazka.ru";
