@@ -1,0 +1,16 @@
+{
+  "name": "moya-skazka",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Лендинг Telegram-бота «Моя Сказка» — детские сказки с иллюстрациями",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "fonts": "node scripts/fetch-fonts.mjs"
+  },
+  "dependencies": {
+    "astro": "^7.4.12"
+  }
+}

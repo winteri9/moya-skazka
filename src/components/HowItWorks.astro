@@ -1,0 +1,80 @@
+---
+import Icon from "./Icon.astro";
+import Illustration from "./Illustration.astro";
+import FoxScene from "./art/FoxScene.astro";
+import { ILLUSTRATIONS } from "../data/site";
+
+const steps = [
+  {
+    n: "1",
+    icon: "pen",
+    title: "Расскажите свою идею",
+    text: "Опишите героев и придумайте небольшое приключение.",
+  },
+  {
+    n: "2",
+    icon: "sparkles",
+    title: "Бот создаст историю",
+    text: "Искусственный интеллект превратит вашу идею в настоящую сказку.",
+  },
+  {
+    n: "3",
+    icon: "book",
+    title: "Читайте и удивляйтесь",
+    text: "Получите готовую сказку с красивой иллюстрацией.",
+  },
+] as const;
+---
+
+<section class="section works" id="how">
+  <div class="wrap">
+    <div class="works__head">
+      <h2 class="h2" data-rise>Как рождается сказка? ✨</h2>
+    </div>
+
+    <div class="steps">
+      {
+        steps.map((step, i) => (
+          <article class="step" data-rise style={`--d:${(i * 0.08).toFixed(2)}s`}>
+            <span class="step__n" aria-hidden="true">
+              {step.n}
+            </span>
+            <span class="step__icon">
+              <Icon name={step.icon} size={23} />
+            </span>
+            <h3>{step.title}</h3>
+            <p>{step.text}</p>
+          </article>
+        ))
+      }
+    </div>
+
+    <div class="book-wrap" data-rise>
+      <div class="book">
+        <div class="book__art">
+          <Illustration
+            src={ILLUSTRATIONS.example}
+            alt="Мальчик Миша присел рядом с маленьким лисёнком на лесной поляне"
+            class="book__art-inner"
+            width={560}
+            height={560}
+            sizes="(max-width: 760px) 88vw, 44vw"
+          >
+            <FoxScene />
+          </Illustration>
+        </div>
+
+        <div class="book__text">
+          <span class="book__label">Пример сказки</span>
+          <h3 class="book__title">Миша и лесной друг</h3>
+          <p>
+            Однажды Миша отправился с мамой на прогулку в волшебный лес. Среди высоких
+            деревьев он заметил маленького лисёнка, которому очень нужна была помощь…
+          </p>
+        </div>
+      </div>
+      <div class="book__stack" aria-hidden="true"></div>
+      <div class="book__stack book__stack--two" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>

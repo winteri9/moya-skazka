@@ -1,0 +1,36 @@
+---
+import Illustration from "./Illustration.astro";
+import ForestScene from "./art/ForestScene.astro";
+import { TELEGRAM_URL, ILLUSTRATIONS } from "../data/site";
+---
+
+<section class="hero">
+  <div class="wrap hero__grid">
+    <div class="hero__copy">
+      <h1 data-rise>Ваш ребёнок — герой собственной <em>сказки</em> ✨</h1>
+      <p class="lead" data-rise style="--d:0.1s">
+        Придумайте любую историю, а наш волшебный помощник превратит её в сказку с
+        красивой иллюстрацией.
+      </p>
+      <div class="hero__cta" data-rise style="--d:0.18s">
+        <a class="cta" href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer">
+          Создать свою сказку <span class="cta__spark" aria-hidden="true">✨</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero__art" data-rise style="--d:0.12s">
+      <Illustration
+        src={ILLUSTRATIONS.hero}
+        alt="Мама и маленький мальчик гуляют по волшебному лесу, вокруг светлячки и добрые лесные звери"
+        class="frame"
+        eager
+        width={720}
+        height={820}
+        sizes="(max-width: 900px) 92vw, 46vw"
+      >
+        <ForestScene />
+      </Illustration>
+    </div>
+  </div>
+</section>

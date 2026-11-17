@@ -1,0 +1,40 @@
+---
+/** Минимальный набор линейных иконок в стиле Lucide (stroke 1.7, round). */
+interface Props {
+  name: "book" | "pen" | "sparkles";
+  size?: number;
+}
+const { name, size = 24 } = Astro.props;
+---
+
+<svg
+  viewBox="0 0 24 24"
+  width={size}
+  height={size}
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.7"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  aria-hidden="true"
+  focusable="false"
+>
+  {name === "book" && (
+    <>
+      <path d="M2 4.5h5.5A4.5 4.5 0 0 1 12 9v11a3.2 3.2 0 0 0-3.2-3.2H2Z" />
+      <path d="M22 4.5h-5.5A4.5 4.5 0 0 0 12 9v11a3.2 3.2 0 0 1 3.2-3.2H22Z" />
+    </>
+  )}
+  {name === "pen" && (
+    <>
+      <path d="M12.5 20H21" />
+      <path d="M16.2 3.6a2.1 2.1 0 0 1 3 3L7.4 18.4 3 19.4l1-4.4Z" />
+    </>
+  )}
+  {name === "sparkles" && (
+    <>
+      <path d="M12 3.2l1.55 4.9a2 2 0 0 0 1.3 1.3l4.9 1.55-4.9 1.55a2 2 0 0 0-1.3 1.3L12 18.7l-1.55-4.9a2 2 0 0 0-1.3-1.3L4.25 10.95l4.9-1.55a2 2 0 0 0 1.3-1.3Z" />
+      <path d="M18.5 16.4v3.2M20.1 18h-3.2" />
+    </>
+  )}
+</svg>

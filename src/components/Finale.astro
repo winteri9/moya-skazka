@@ -1,0 +1,43 @@
+---
+import Illustration from "./Illustration.astro";
+import CastleScene from "./art/CastleScene.astro";
+import { TELEGRAM_URL, ILLUSTRATIONS } from "../data/site";
+---
+
+<section class="section">
+  <div class="wrap">
+    <div class="finale">
+      <div class="finale__scene" aria-hidden="true">
+        {
+          ILLUSTRATIONS.finale ? (
+            <Illustration
+              src={ILLUSTRATIONS.finale}
+              alt=""
+              class="finale__img"
+              width={1440}
+              height={500}
+              sizes="100vw"
+            />
+          ) : (
+            <CastleScene />
+          )
+        }
+      </div>
+
+      <div class="finale__inner">
+        <h2 class="h2" data-rise>Подарите ребёнку сказку, которой ещё никто не слышал ✨</h2>
+        <p data-rise style="--d:0.08s">Пусть каждый вечер начинается с маленького волшебства.</p>
+        <a
+          class="cta"
+          href={TELEGRAM_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          data-rise
+          style="--d:0.16s"
+        >
+          Создать сказку в Telegram
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
